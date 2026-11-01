@@ -8,24 +8,24 @@ export default function Metrics() {
         {METRICS.map((metric, idx) => (
           <div
             key={idx}
-            className="p-space-lg bg-surface-charcoal border border-border-subtle hover:border-primary-container transition-all duration-300 flex flex-col justify-between group hover:-translate-y-0.5"
+            className="p-4 sm:p-space-lg bg-surface-charcoal border border-border-subtle hover:border-primary-container transition-all duration-300 flex flex-col justify-between group hover:-translate-y-0.5"
           >
-            <div className="flex items-baseline justify-between mb-space-sm">
-              <span className="font-metric-num text-metric-num text-pure-white flex items-baseline">
+            <div className="flex items-baseline justify-between mb-space-sm gap-1">
+              <span className="font-metric-num text-3xl sm:text-4xl lg:text-metric-num text-pure-white flex items-baseline tracking-tight">
                 {metric.value}
                 <span
                   className={`${metric.color} ${
-                    metric.isTextSuffix ? 'text-headline-md font-bold' : ''
+                    metric.isTextSuffix ? 'text-lg sm:text-headline-md font-bold' : ''
                   }`}
                 >
                   {metric.suffix}
                 </span>
               </span>
-              <span className={`font-label-uppercase text-label-uppercase ${metric.color}`}>
+              <span className={`font-label-uppercase text-[10px] sm:text-label-uppercase ${metric.color} shrink-0`}>
                 {metric.code}
               </span>
             </div>
-            <p className="font-label-uppercase text-label-uppercase text-text-muted uppercase tracking-widest group-hover:text-pure-white transition-colors">
+            <p className="font-label-uppercase text-[10px] sm:text-label-uppercase text-text-muted uppercase tracking-widest group-hover:text-pure-white transition-colors">
               {metric.label}
             </p>
           </div>

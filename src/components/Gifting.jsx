@@ -124,3 +124,4 @@ export default function Gifting({ onSelectTier }) {
     </section>
   );
 }
+

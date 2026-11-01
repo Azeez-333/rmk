@@ -236,3 +236,4 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
     </div>
   );
 }
+

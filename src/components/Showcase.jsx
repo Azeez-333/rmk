@@ -137,3 +137,4 @@ export default function Showcase({ onSelectCaseStudy }) {
     </section>
   );
 }
+

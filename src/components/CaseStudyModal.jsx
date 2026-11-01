@@ -115,3 +115,4 @@ export default function CaseStudyModal({ caseStudy, onClose, onStartProjectForSt
     </div>
   );
 }
+

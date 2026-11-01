@@ -68,3 +68,4 @@ export default function LegalModal({ topic, onClose }) {
     </div>
   );
 }
+

@@ -11,9 +11,12 @@ export default function Hero({ onOpenStartProject }) {
   };
 
   return (
-    <section id="home" className="relative w-full overflow-hidden bg-surface-black text-pure-white -mt-[116px] pt-[150px] pb-space-3xl">
+    <section
+      id="home"
+      className="relative w-full overflow-hidden bg-surface-black text-pure-white -mt-[116px] pt-[170px] md:pt-[200px] pb-space-2xl md:pb-space-3xl"
+    >
       {/* Atmospheric Ambient Background Graphic */}
-      <div className="absolute inset-0 z-0 opacity-40">
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
         <div
           className="w-full h-full bg-cover bg-center transition-transform duration-1000 scale-105"
           style={{
@@ -25,24 +28,18 @@ export default function Hero({ onOpenStartProject }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex flex-col items-center text-center">
-        {/* Quality Badge */}
-        <div className="inline-flex items-center gap-space-xs px-space-md py-1 bg-surface-card/90 border border-border-strong text-gold-badge font-label-uppercase text-label-uppercase tracking-widest uppercase mb-space-lg shadow-sm backdrop-blur-sm">
-          <span className="w-1.5 h-1.5 bg-primary-container inline-block animate-ping"></span>
-          Atelier Run Quality • High Precision Packaging
-        </div>
-
-        {/* Hero Title */}
-        <h1 className="font-display-xl text-display-xl-mobile md:text-display-xl uppercase tracking-tight text-pure-white mb-space-md max-w-5xl">
+        {/* Main Hero Headline - Fluidly clamped so it NEVER overflows any screen */}
+        <h1 className="font-display-xl text-[clamp(2.2rem,6vw,4.5rem)] font-extrabold uppercase tracking-tight text-pure-white mb-space-md max-w-6xl mx-auto leading-[1.08] select-none px-2">
           PACKAGIN<span className="text-primary-container font-black">'R</span>EDEFINED
         </h1>
 
         {/* Subtitle */}
-        <p className="font-body-lg text-body-md md:text-body-lg text-on-surface max-w-2xl mx-auto mb-space-xl text-text-muted">
+        <p className="font-body-lg text-body-md md:text-body-lg text-on-surface max-w-2xl mx-auto mb-space-xl text-text-muted px-4 leading-relaxed">
           {BRAND_INFO.subheading}
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-space-md w-full max-w-md">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-space-md w-full max-w-md mx-auto px-4">
           <button
             onClick={onOpenStartProject}
             className="w-full sm:w-auto inline-flex items-center justify-center px-space-xl py-space-md bg-primary-container text-pure-white font-button-text text-button-text uppercase tracking-wider hover:bg-pure-white hover:text-surface-black transition-colors duration-100 shadow-xl cursor-pointer active:scale-95"

@@ -6,9 +6,18 @@
   html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     background-color: #0A0A0A;
     color: #e5e2e1;
     font-family: 'Space Grotesk', sans-serif;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   /* Sharp industrial custom scrollbar */
