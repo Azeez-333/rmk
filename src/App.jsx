@@ -45,14 +45,14 @@ export default function App() {
 
   return (
     <div className="bg-surface-black min-h-screen text-on-surface antialiased selection:bg-primary-container selection:text-pure-white flex flex-col w-full overflow-x-hidden">
-      {/* Fixed Header */}
+      {/* Fixed Header (Without top free bar) */}
       <Header
         onOpenStartProject={() => handleOpenStartProject('Custom Boxes')}
         onOpenConsultation={() => handleOpenStartProject('Die-Line Audit & Consultation')}
       />
 
       {/* Main Content */}
-      <main className="w-full pt-[116px] bg-surface-black flex-1 overflow-x-hidden">
+      <main className="w-full pt-20 bg-surface-black flex-1 overflow-x-hidden">
         <div className="flex flex-col w-full overflow-x-hidden">
           {/* 1. Hero Section */}
           <Hero onOpenStartProject={() => handleOpenStartProject('Custom Boxes')} />

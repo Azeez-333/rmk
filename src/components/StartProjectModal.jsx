@@ -46,27 +46,27 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl bg-surface-charcoal border-2 border-primary-container p-6 md:p-8 my-8 shadow-2xl relative"
+        className="w-full max-w-2xl bg-surface-charcoal border-2 border-border-strong rounded-3xl p-6 md:p-8 my-8 shadow-2xl relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-start justify-between pb-4 border-b border-border-subtle mb-6">
           <div>
-            <div className="flex items-center gap-2 font-label-uppercase text-xs text-primary-container tracking-widest uppercase mb-1">
-              <span className="w-2 h-2 bg-primary-container"></span>
+            <div className="inline-flex items-center gap-2 font-label-uppercase text-xs text-primary-container tracking-widest uppercase mb-1 px-3 py-1 rounded-full bg-surface-card border border-border-strong">
+              <span className="w-2 h-2 rounded-full bg-primary-container"></span>
               HIGH-PRIORITY ATELIER INTAKE
             </div>
-            <h2 className="font-headline-md text-2xl text-pure-white uppercase">
+            <h2 className="font-headline-md text-2xl text-pure-white uppercase mt-1">
               START YOUR PROJECT // FAST ESTIMATE
             </h2>
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 flex items-center justify-center text-text-muted hover:text-pure-white border border-border-strong hover:border-primary-container transition-colors"
+            className="w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-pure-white border border-border-strong hover:border-primary-container hover:bg-surface-card transition-colors cursor-pointer"
           >
             ✕
           </button>
@@ -91,10 +91,10 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
                   type="button"
                   key={item}
                   onClick={() => setCategory(item)}
-                  className={`p-2.5 text-xs uppercase font-button-text border text-left transition-colors ${
+                  className={`p-3 text-xs uppercase font-button-text rounded-xl border text-left transition-all duration-200 cursor-pointer ${
                     category === item
-                      ? 'border-primary-container bg-primary-container/20 text-pure-white'
-                      : 'border-border-subtle bg-surface-black text-text-muted hover:border-border-strong'
+                      ? 'border-primary-container bg-primary-container/20 text-pure-white shadow-sm'
+                      : 'border-border-subtle bg-surface-black text-text-muted hover:border-border-strong hover:text-pure-white'
                   }`}
                 >
                   {item}
@@ -125,10 +125,10 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
                     type="button"
                     key={finish}
                     onClick={() => toggleFinish(finish)}
-                    className={`p-2 text-xs border text-left transition-colors flex items-center justify-between ${
+                    className={`p-2.5 text-xs rounded-xl border text-left transition-all duration-200 flex items-center justify-between cursor-pointer ${
                       selected
-                        ? 'border-gold-badge bg-gold-badge/10 text-pure-white'
-                        : 'border-border-subtle bg-surface-black text-text-muted hover:border-border-strong'
+                        ? 'border-gold-badge bg-gold-badge/15 text-pure-white shadow-sm'
+                        : 'border-border-subtle bg-surface-black text-text-muted hover:border-border-strong hover:text-pure-white'
                     }`}
                   >
                     <span>{finish}</span>
@@ -148,7 +148,7 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
               <select
                 value={volume}
                 onChange={(e) => setVolume(e.target.value)}
-                className="w-full h-11 bg-surface-container-lowest border border-border-strong px-3 text-pure-white focus:outline-none focus:border-primary-container text-xs"
+                className="w-full h-11 bg-surface-container-lowest border border-border-strong rounded-xl px-3 text-pure-white focus:outline-none focus:border-primary-container text-xs cursor-pointer"
               >
                 <option value="250">Sample Run (250 units)</option>
                 <option value="500">Pilot (500 units)</option>
@@ -161,7 +161,7 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
               <label className="block font-label-uppercase text-xs text-text-muted uppercase mb-1">
                 Target Turnaround
               </label>
-              <div className="h-11 bg-surface-black border border-border-strong px-3 flex items-center justify-between text-xs text-text-muted">
+              <div className="h-11 bg-surface-black border border-border-strong rounded-xl px-3 flex items-center justify-between text-xs text-text-muted">
                 <span>Standard Atelier:</span>
                 <span className="text-primary-container font-bold">5 - 7 Business Days</span>
               </div>
@@ -179,7 +179,7 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Elena Rostova // Kestrel Co."
-                className="w-full h-11 bg-surface-container-lowest border border-border-strong px-3 text-pure-white placeholder-text-muted/50 focus:outline-none focus:border-primary-container text-xs"
+                className="w-full h-11 bg-surface-container-lowest border border-border-strong rounded-xl px-3 text-pure-white placeholder-text-muted/50 focus:outline-none focus:border-primary-container text-xs"
               />
             </div>
             <div>
@@ -192,7 +192,7 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="founder@brand.com"
-                className="w-full h-11 bg-surface-container-lowest border border-border-strong px-3 text-pure-white placeholder-text-muted/50 focus:outline-none focus:border-primary-container text-xs"
+                className="w-full h-11 bg-surface-container-lowest border border-border-strong rounded-xl px-3 text-pure-white placeholder-text-muted/50 focus:outline-none focus:border-primary-container text-xs"
               />
             </div>
           </div>
@@ -202,7 +202,7 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
             <label className="block font-label-uppercase text-xs text-text-muted uppercase mb-1">
               Die-line / Artwork / Reference Specs (Optional)
             </label>
-            <div className="border border-dashed border-border-strong p-4 text-center bg-surface-black hover:border-primary-container transition-colors relative cursor-pointer">
+            <div className="border border-dashed border-border-strong rounded-2xl p-4 text-center bg-surface-black hover:border-primary-container transition-colors relative cursor-pointer">
               <input
                 type="file"
                 onChange={handleFileChange}
@@ -219,16 +219,19 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
           </div>
 
           {/* Submit */}
-          <div className="pt-2 flex items-center justify-between gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
             <span className="text-[11px] text-text-muted font-label-uppercase">
               NO OBLIGATION • 24H SLA ON TECHNICAL REVIEW
             </span>
             <button
               disabled={isSubmitting}
               type="submit"
-              className="px-8 h-12 bg-primary-container text-pure-white font-button-text uppercase tracking-widest text-xs hover:bg-pure-white hover:text-surface-black transition-colors flex items-center gap-2 cursor-pointer disabled:opacity-50"
+              className="w-full sm:w-auto px-8 h-12 rounded-full bg-primary-container text-pure-white font-button-text uppercase tracking-widest text-xs transition-all duration-300 ease-out hover:translate-x-1.5 hover:bg-pure-white hover:text-surface-black flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 shadow-lg shadow-primary-container/20 group"
             >
-              <span>{isSubmitting ? 'GENERATING QUOTE...' : 'SUBMIT BRIEF →'}</span>
+              <span>{isSubmitting ? 'GENERATING QUOTE...' : 'SUBMIT BRIEF'}</span>
+              <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
             </button>
           </div>
         </form>
@@ -236,4 +239,3 @@ export default function StartProjectModal({ isOpen, onClose, initialCategory, on
     </div>
   );
 }
-

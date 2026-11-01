@@ -16,13 +16,13 @@ export default function Process() {
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Header */}
         <div className="text-center max-w-2xl mb-space-3xl">
-          <span className="font-label-uppercase text-label-uppercase text-primary-container tracking-widest uppercase">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-surface-card border border-border-strong text-primary-container font-label-uppercase text-xs tracking-widest uppercase mb-1">
             PRODUCTION LIFECYCLE
           </span>
           <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-pure-white uppercase tracking-tight mt-1">
             OUR PROCESS
           </h2>
-          <p className="font-body-md text-body-md text-text-muted mt-2">
+          <p className="font-body-md text-sm sm:text-base text-text-muted mt-2">
             Streamlined from concept to delivery with strict quality gates at each milestone.
           </p>
         </div>
@@ -41,10 +41,10 @@ export default function Process() {
               return (
                 <div
                   key={connectorIdx}
-                  className="flex-1 h-[2px] bg-border-strong relative overflow-hidden"
+                  className="flex-1 h-[2px] bg-border-strong rounded-full relative overflow-hidden"
                 >
                   <div
-                    className="absolute inset-0 bg-primary-container transition-all duration-300 ease-out"
+                    className="absolute inset-0 bg-primary-container rounded-full transition-all duration-300 ease-out"
                     style={{
                       width: isConnectorActive ? '100%' : '0%',
                       opacity: isConnectorActive ? 1 : 0.2,
@@ -91,7 +91,7 @@ export default function Process() {
 
                   {/* Step Description */}
                   <p
-                    className={`step-desc font-body-sm text-body-sm transition-colors duration-300 max-w-xs ${
+                    className={`step-desc font-body-sm text-xs sm:text-sm transition-colors duration-300 max-w-xs ${
                       isActive ? 'text-text-muted' : 'text-text-muted/40'
                     }`}
                   >
@@ -104,7 +104,7 @@ export default function Process() {
         </div>
 
         {/* Milestone Indicator Helper */}
-        <div className="mt-8 font-label-uppercase text-xs text-text-muted tracking-widest flex items-center gap-2">
+        <div className="mt-8 font-label-uppercase text-xs text-text-muted tracking-widest flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-black border border-border-subtle">
           <span className="w-2 h-2 rounded-full bg-primary-container"></span>
           <span>CLICK OR HOVER ANY PHASE TO INSPECT PRODUCTION GATEWAYS</span>
         </div>
@@ -112,4 +112,3 @@ export default function Process() {
     </section>
   );
 }
-

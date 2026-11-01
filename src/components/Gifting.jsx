@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GIFTING_TIERS } from '../constants/data';
 
 export default function Gifting({ onSelectTier }) {
-  const [selectedTierDetail, setSelectedTierDetail] = useState(null);
-
   return (
     <section
       id="gifting"
@@ -12,14 +10,14 @@ export default function Gifting({ onSelectTier }) {
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Header */}
         <div className="text-center max-w-3xl mb-space-2xl">
-          <span className="inline-block px-space-sm py-1 bg-secondary-container/30 border border-gold-badge/40 text-gold-badge font-label-uppercase text-label-uppercase tracking-widest uppercase mb-space-sm">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container/30 border border-gold-badge/40 text-gold-badge font-label-uppercase text-xs tracking-widest uppercase mb-space-sm">
             GIFTING BY RMK
           </span>
           <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-pure-white uppercase tracking-tight">
             CORPORATE GIFTS, <br />
             <span className="text-secondary">YOUR BRAND EVERYWHERE.</span>
           </h2>
-          <p className="font-body-md text-body-md text-text-muted mt-space-sm max-w-xl mx-auto">
+          <p className="font-body-md text-sm sm:text-base text-text-muted mt-space-sm max-w-xl mx-auto">
             Curated gift sets with your logo on every item inside — boxes, labels, ribbon, notecards.
             Six tiers, starting from 25 units.
           </p>
@@ -32,27 +30,27 @@ export default function Gifting({ onSelectTier }) {
             return (
               <div
                 key={tier.id}
-                className={`p-space-lg flex flex-col justify-between relative group transition-all duration-300 ${
+                className={`p-space-lg rounded-2xl flex flex-col justify-between relative group transition-all duration-300 ${
                   isPopular
-                    ? 'bg-surface-card border-2 border-gold-badge shadow-lg shadow-secondary/10'
+                    ? 'bg-surface-card border-2 border-gold-badge shadow-xl shadow-secondary/10'
                     : 'bg-surface-charcoal border border-border-subtle hover:border-gold-badge'
                 }`}
               >
                 {/* Floating Tags */}
                 {isPopular && (
-                  <div className="absolute -top-3 right-6 bg-gold-badge text-surface-black font-label-uppercase text-label-uppercase px-space-sm py-1 font-extrabold uppercase tracking-widest shadow-md">
+                  <div className="absolute -top-3 right-6 bg-gold-badge text-surface-black font-label-uppercase text-[11px] px-3 py-1 rounded-full font-extrabold uppercase tracking-widest shadow-md">
                     {tier.tag}
                   </div>
                 )}
                 {tier.tag && !isPopular && (
-                  <div className="absolute -top-3 right-6 bg-surface-card border border-border-strong text-pure-white font-label-uppercase text-label-uppercase px-space-sm py-1 uppercase tracking-widest">
+                  <div className="absolute -top-3 right-6 bg-surface-card border border-border-strong text-pure-white font-label-uppercase text-[11px] px-3 py-1 rounded-full uppercase tracking-widest">
                     {tier.tag}
                   </div>
                 )}
 
                 <div>
                   <div
-                    className={`relative w-full h-52 overflow-hidden mb-space-md border ${
+                    className={`relative w-full h-52 rounded-xl overflow-hidden mb-space-md border ${
                       isPopular ? 'border-gold-badge/40' : 'border-border-strong'
                     }`}
                   >
@@ -64,7 +62,7 @@ export default function Gifting({ onSelectTier }) {
                     />
                   </div>
                   <div
-                    className={`font-label-uppercase text-label-uppercase uppercase mb-1 ${
+                    className={`font-label-uppercase text-xs uppercase mb-1 ${
                       isPopular ? 'text-gold-badge' : 'text-text-muted'
                     }`}
                   >
@@ -73,22 +71,22 @@ export default function Gifting({ onSelectTier }) {
                   <h3 className="font-headline-md text-headline-md text-pure-white uppercase mb-space-xs">
                     {tier.title}
                   </h3>
-                  <p className="font-body-sm text-body-sm text-text-muted mb-space-md">
+                  <p className="font-body-sm text-sm text-text-muted mb-space-md">
                     {tier.description}
                   </p>
 
-                  {/* Included features pill preview */}
-                  <div className="space-y-1 mb-4">
+                  {/* Included features preview */}
+                  <div className="space-y-1.5 mb-4">
                     {tier.features.slice(0, 3).map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-1.5 text-xs text-text-muted">
-                        <span className="w-1 h-1 bg-gold-badge"></span>
+                      <div key={fIdx} className="flex items-center gap-2 text-xs text-text-muted">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold-badge shrink-0"></span>
                         <span className="truncate">{feat}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-space-md border-t border-border-subtle flex items-baseline justify-between">
+                <div className="pt-space-md border-t border-border-subtle flex items-center justify-between">
                   <div>
                     <span
                       className={`font-headline-md text-headline-md ${
@@ -97,15 +95,14 @@ export default function Gifting({ onSelectTier }) {
                     >
                       {tier.price}
                     </span>
-                    <span className="font-body-sm text-body-sm text-text-muted">{tier.unit}</span>
+                    <span className="font-body-sm text-xs text-text-muted">{tier.unit}</span>
                   </div>
                   <button
                     onClick={() => onSelectTier(tier)}
-                    className={`font-label-uppercase text-label-uppercase hover:underline cursor-pointer ${
-                      isPopular ? 'text-gold-badge' : 'text-text-muted'
-                    }`}
+                    className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-border-strong bg-surface-black/60 text-xs font-semibold uppercase tracking-wider text-pure-white hover:bg-gold-badge hover:text-black hover:border-gold-badge transition-all duration-300 ease-out hover:translate-x-1.5 cursor-pointer shadow-sm"
                   >
-                    {tier.minUnits} →
+                    <span>{tier.minUnits}</span>
+                    <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                   </button>
                 </div>
               </div>
@@ -113,15 +110,17 @@ export default function Gifting({ onSelectTier }) {
           })}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button with Rounded Radius & Left-to-Right Hover Animation */}
         <button
           onClick={() => onSelectTier(GIFTING_TIERS[1])}
-          className="inline-flex items-center justify-center px-space-2xl py-space-md bg-gold-badge text-surface-black font-button-text text-button-text uppercase tracking-widest font-bold hover:bg-pure-white transition-colors duration-100 shadow-md cursor-pointer active:scale-95"
+          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gold-badge text-surface-black font-button-text text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 ease-out hover:translate-x-2 hover:bg-pure-white hover:text-surface-black shadow-lg shadow-gold-badge/20 cursor-pointer active:scale-95 group"
         >
-          EXPLORE ALL GIFT SETS →
+          <span>EXPLORE ALL GIFT SETS</span>
+          <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
+            arrow_forward
+          </span>
         </button>
       </div>
     </section>
   );
 }
-

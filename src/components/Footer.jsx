@@ -160,25 +160,28 @@ export default function Footer({ onOpenLegal }) {
                 <li className="border-b border-border-subtle/50 pb-space-xs">
                   <button
                     onClick={() => onOpenLegal && onOpenLegal('dieline')}
-                    className="text-left text-pure-white hover:text-primary-container transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-left text-pure-white hover:text-primary-container transition-all duration-300 hover:translate-x-1 cursor-pointer"
                   >
-                    Die-line Guidelines
+                    <span>Die-line Guidelines</span>
+                    <span className="material-symbols-outlined text-xs">arrow_forward</span>
                   </button>
                 </li>
                 <li className="border-b border-border-subtle/50 pb-space-xs">
                   <button
                     onClick={() => onOpenLegal && onOpenLegal('sustainability')}
-                    className="text-left text-pure-white hover:text-primary-container transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-left text-pure-white hover:text-primary-container transition-all duration-300 hover:translate-x-1 cursor-pointer"
                   >
-                    Sustainable Inks &amp; Boards
+                    <span>Sustainable Inks &amp; Boards</span>
+                    <span className="material-symbols-outlined text-xs">arrow_forward</span>
                   </button>
                 </li>
                 <li className="border-b border-border-subtle/50 pb-space-xs">
                   <button
                     onClick={() => onOpenLegal && onOpenLegal('turnaround')}
-                    className="text-left text-pure-white hover:text-primary-container transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-left text-pure-white hover:text-primary-container transition-all duration-300 hover:translate-x-1 cursor-pointer"
                   >
-                    Turnaround Times
+                    <span>Turnaround Times</span>
+                    <span className="material-symbols-outlined text-xs">arrow_forward</span>
                   </button>
                 </li>
               </ul>
@@ -194,51 +197,30 @@ export default function Footer({ onOpenLegal }) {
             <span className="text-pure-white">© 2024 RMK STUDIO INC. ALL RIGHTS RESERVED.</span>
             <button
               onClick={() => onOpenLegal && onOpenLegal('privacy')}
-              className="hover:text-pure-white transition-colors cursor-pointer"
+              className="hover:text-primary-container transition-colors cursor-pointer"
             >
               PRIVACY POLICY
             </button>
             <span className="text-border-strong">/</span>
             <button
               onClick={() => onOpenLegal && onOpenLegal('terms')}
-              className="hover:text-pure-white transition-colors cursor-pointer"
+              className="hover:text-primary-container transition-colors cursor-pointer"
             >
               TERMS OF SERVICE
             </button>
           </div>
-          <div className="flex items-center gap-space-md font-label-uppercase text-label-uppercase tracking-widest">
-            <a
-              className="text-text-muted hover:text-primary-container transition-colors"
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              INSTAGRAM
-            </a>
-            <a
-              className="text-text-muted hover:text-primary-container transition-colors"
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LINKEDIN
-            </a>
-            <a
-              className="text-text-muted hover:text-primary-container transition-colors"
-              href="https://dribbble.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              DRIBBBLE
-            </a>
-            <a
-              className="text-text-muted hover:text-primary-container transition-colors"
-              href="https://behance.net"
-              target="_blank"
-              rel="noreferrer"
-            >
-              BEHANCE
-            </a>
+          <div className="flex items-center gap-2 font-label-uppercase text-xs tracking-widest flex-wrap">
+            {['INSTAGRAM', 'LINKEDIN', 'DRIBBBLE', 'BEHANCE'].map((net) => (
+              <a
+                key={net}
+                className="px-3 py-1 rounded-full border border-border-strong text-text-muted hover:text-pure-white hover:border-primary-container hover:bg-primary-container transition-all duration-300 ease-out hover:translate-x-1"
+                href={`https://${net.toLowerCase()}.com`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {net}
+              </a>
+            ))}
           </div>
         </div>
       </div>

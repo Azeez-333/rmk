@@ -34,21 +34,21 @@ export default function LegalModal({ topic, onClose }) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-xl bg-surface-charcoal border-2 border-primary-container p-6 md:p-8 shadow-2xl relative"
+        className="w-full max-w-xl bg-surface-charcoal border-2 border-border-strong rounded-3xl p-6 md:p-8 shadow-2xl relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 w-8 h-8 flex items-center justify-center text-text-muted hover:text-pure-white border border-border-strong hover:border-primary-container transition-colors"
+          className="absolute top-6 right-6 w-9 h-9 rounded-full flex items-center justify-center text-text-muted hover:text-pure-white border border-border-strong hover:border-primary-container hover:bg-surface-card transition-colors cursor-pointer"
         >
           ✕
         </button>
 
-        <div className="flex items-center gap-2 font-label-uppercase text-xs text-primary-container tracking-widest uppercase mb-2">
-          <span className="w-2 h-2 bg-primary-container"></span>
+        <div className="inline-flex items-center gap-2 font-label-uppercase text-xs text-primary-container tracking-widest uppercase mb-2 px-3 py-1 rounded-full bg-surface-card border border-border-strong">
+          <span className="w-2 h-2 rounded-full bg-primary-container"></span>
           ATELIER DOCUMENTATION
         </div>
-        <h3 className="font-headline-md text-xl text-pure-white uppercase mb-4">
+        <h3 className="font-headline-md text-xl text-pure-white uppercase mb-4 mt-1">
           {current.title}
         </h3>
 
@@ -59,7 +59,7 @@ export default function LegalModal({ topic, onClose }) {
         <div className="pt-4 border-t border-border-subtle flex justify-end">
           <button
             onClick={onClose}
-            className="px-6 py-2 bg-primary-container text-pure-white font-button-text uppercase text-xs hover:bg-pure-white hover:text-surface-black transition-colors"
+            className="px-6 py-2.5 rounded-full bg-primary-container text-pure-white font-button-text uppercase text-xs transition-all duration-300 ease-out hover:translate-x-1.5 hover:bg-pure-white hover:text-surface-black shadow-md cursor-pointer"
           >
             ACKNOWLEDGE
           </button>
@@ -68,4 +68,3 @@ export default function LegalModal({ topic, onClose }) {
     </div>
   );
 }
-

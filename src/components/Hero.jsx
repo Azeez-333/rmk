@@ -13,7 +13,7 @@ export default function Hero({ onOpenStartProject }) {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-surface-black text-pure-white -mt-[116px] pt-[170px] md:pt-[200px] pb-space-2xl md:pb-space-3xl"
+      className="relative w-full overflow-hidden bg-surface-black text-pure-white -mt-20 pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24"
     >
       {/* Atmospheric Ambient Background Graphic */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
@@ -27,39 +27,51 @@ export default function Hero({ onOpenStartProject }) {
         <div className="absolute inset-0 bg-radial-gradient from-transparent via-surface-black/40 to-surface-black"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex flex-col items-center text-center">
-        {/* Main Hero Headline - Fluidly clamped so it NEVER overflows any screen */}
-        <h1 className="font-display-xl text-[clamp(2.2rem,6vw,4.5rem)] font-extrabold uppercase tracking-tight text-pure-white mb-space-md max-w-6xl mx-auto leading-[1.08] select-none px-2">
-          PACKAGIN<span className="text-primary-container font-black">'R</span>EDEFINED
+      <div className="relative z-10 max-w-6xl mx-auto px-margin-mobile lg:px-margin flex flex-col items-center text-center">
+        {/* Main Hero Headline - Formatted so "REDEFINED" is 100% visible on every screen */}
+        <h1 className="font-display-xl uppercase tracking-tight text-pure-white mb-4 sm:mb-5 select-none leading-[1.1] max-w-5xl mx-auto px-2">
+          <span className="inline-block text-3xl sm:text-5xl md:text-6xl lg:text-[68px]">
+            PACKAGIN'
+          </span>{' '}
+          <span className="inline-block text-3xl sm:text-5xl md:text-6xl lg:text-[68px] text-primary-container font-black">
+            REDEFINED
+          </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="font-body-lg text-body-md md:text-body-lg text-on-surface max-w-2xl mx-auto mb-space-xl text-text-muted px-4 leading-relaxed">
+        <p className="font-body-md text-sm sm:text-base md:text-lg text-text-muted max-w-xl mx-auto mb-8 sm:mb-10 px-4 leading-relaxed">
           {BRAND_INFO.subheading}
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-space-md w-full max-w-md mx-auto px-4">
+        {/* CTA Buttons - Compact, Beautiful Rounded-Full Radius & Left-to-Right Hover */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto px-4">
           <button
             onClick={onOpenStartProject}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-space-xl py-space-md bg-primary-container text-pure-white font-button-text text-button-text uppercase tracking-wider hover:bg-pure-white hover:text-surface-black transition-colors duration-100 shadow-xl cursor-pointer active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-primary-container text-pure-white font-button-text text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 ease-out hover:translate-x-2 hover:bg-pure-white hover:text-surface-black shadow-lg shadow-primary-container/25 cursor-pointer active:scale-95 group"
           >
-            START NOW →
+            <span>START NOW</span>
+            <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+              arrow_forward
+            </span>
           </button>
+
           <a
             href="#brief"
             onClick={handleScrollToBrief}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-space-xl py-space-md bg-surface-card border border-border-strong text-pure-white font-button-text text-button-text uppercase tracking-wider hover:border-primary-container hover:bg-surface-charcoal transition-colors cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-surface-card border border-border-strong text-pure-white font-button-text text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 ease-out hover:translate-x-2 hover:bg-primary-container hover:text-pure-white hover:border-primary-container shadow-md cursor-pointer group"
           >
-            DISCUSS YOUR BRIEF
+            <span>DISCUSS YOUR BRIEF</span>
+            <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+              chat
+            </span>
           </a>
         </div>
 
         {/* Industrial Line Indicator Ticker */}
-        <div className="mt-space-2xl flex items-center gap-2">
-          <span className="w-8 h-1 bg-primary-container inline-block"></span>
-          <span className="w-2 h-1 bg-border-strong inline-block"></span>
-          <span className="w-2 h-1 bg-border-strong inline-block"></span>
+        <div className="mt-10 sm:mt-14 flex items-center gap-2">
+          <span className="w-8 h-1 rounded-full bg-primary-container inline-block"></span>
+          <span className="w-2 h-1 rounded-full bg-border-strong inline-block"></span>
+          <span className="w-2 h-1 rounded-full bg-border-strong inline-block"></span>
         </div>
       </div>
     </section>
