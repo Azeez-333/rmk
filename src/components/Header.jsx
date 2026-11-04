@@ -40,7 +40,7 @@ export default function Header({ onOpenStartProject, onOpenConsultation }) {
 
     const element = document.getElementById(targetId);
     if (element) {
-      const headerOffset = 90;
+      const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({
@@ -60,14 +60,14 @@ export default function Header({ onOpenStartProject, onOpenConsultation }) {
             : 'bg-surface-black/85 backdrop-blur-sm border-b border-border-subtle/50'
         }`}
       >
-        {/* Main Navbar (Top bar removed as requested) */}
-        <div className="h-20 w-full px-margin-mobile lg:px-margin">
+        {/* Main Navbar - Clean h-16 on mobile and h-20 on desktop */}
+        <div className="h-16 sm:h-20 w-full px-4 sm:px-margin-mobile lg:px-margin">
           <div className="max-w-7xl h-full mx-auto flex items-center justify-between">
             {/* RMK Logo */}
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, 'home')}
-              className="flex items-baseline font-headline-md text-headline-md tracking-tight text-pure-white uppercase select-none group"
+              className="flex items-baseline font-headline-md text-xl sm:text-headline-md tracking-tight text-pure-white uppercase select-none group"
             >
               <span className="font-black text-pure-white group-hover:text-primary-container transition-colors">
                 {BRAND_INFO.name}
@@ -107,8 +107,8 @@ export default function Header({ onOpenStartProject, onOpenConsultation }) {
               })}
             </nav>
 
-            {/* Action Buttons with Beautiful Radius & Left-to-Right Hover Animation */}
-            <div className="flex items-center gap-3">
+            {/* Action Buttons */}
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 onClick={() => {
                   const contactEl = document.getElementById('contact') || document.getElementById('brief');
@@ -116,14 +116,15 @@ export default function Header({ onOpenStartProject, onOpenConsultation }) {
                     contactEl.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-border-strong bg-surface-charcoal/80 text-pure-white font-button-text text-xs uppercase tracking-wider hover:border-primary-container hover:bg-primary-container hover:text-pure-white transition-all duration-300 ease-out hover:translate-x-1.5 cursor-pointer shadow-sm"
+                className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-border-strong bg-surface-charcoal/80 text-pure-white font-button-text text-xs uppercase tracking-wider hover:border-primary-container hover:bg-primary-container hover:text-pure-white transition-all duration-300 ease-out hover:translate-x-1.5 cursor-pointer shadow-sm"
               >
                 GET IN TOUCH
               </button>
 
+              {/* On mobile screens, hide this cramped button to prevent header overflow */}
               <button
                 onClick={onOpenStartProject}
-                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-primary-container text-pure-white font-button-text text-xs uppercase tracking-wider hover:bg-pure-white hover:text-surface-black transition-all duration-300 ease-out hover:translate-x-1.5 cursor-pointer shadow-lg shadow-primary-container/20 active:scale-95"
+                className="hidden sm:inline-flex items-center justify-center px-5 sm:px-6 py-2.5 rounded-full bg-primary-container text-pure-white font-button-text text-xs uppercase tracking-wider hover:bg-pure-white hover:text-surface-black transition-all duration-300 ease-out hover:translate-x-1.5 cursor-pointer shadow-lg shadow-primary-container/20 active:scale-95 whitespace-nowrap"
               >
                 START PROJECT
               </button>
@@ -132,7 +133,7 @@ export default function Header({ onOpenStartProject, onOpenConsultation }) {
               <button
                 onClick={() => setShowProfileModal(!showProfileModal)}
                 title="Atelier Account"
-                className="w-9 h-9 rounded-full bg-surface-card border border-border-strong flex items-center justify-center ml-1 text-primary-container hover:bg-primary-container hover:text-pure-white hover:border-primary-container transition-all duration-300 ease-out hover:translate-x-1 cursor-pointer relative"
+                className="w-9 h-9 rounded-full bg-surface-card border border-border-strong flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-pure-white hover:border-primary-container transition-all duration-300 ease-out hover:translate-x-1 cursor-pointer relative"
               >
                 <span className="material-symbols-outlined text-[18px]">person</span>
               </button>
@@ -140,10 +141,10 @@ export default function Header({ onOpenStartProject, onOpenConsultation }) {
               {/* Mobile Menu Hamburger */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="xl:hidden w-10 h-10 rounded-full flex items-center justify-center text-pure-white hover:text-primary-container hover:bg-surface-card focus:outline-none ml-1 transition-colors"
+                className="xl:hidden w-9 h-9 rounded-full flex items-center justify-center text-pure-white hover:text-primary-container hover:bg-surface-card focus:outline-none transition-colors"
                 aria-label="Toggle navigation"
               >
-                <span className="material-symbols-outlined text-[26px]">
+                <span className="material-symbols-outlined text-[24px]">
                   {mobileMenuOpen ? 'close' : 'menu'}
                 </span>
               </button>
@@ -153,8 +154,8 @@ export default function Header({ onOpenStartProject, onOpenConsultation }) {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-surface-charcoal/95 backdrop-blur-lg border-b border-border-subtle px-margin-mobile py-6 shadow-2xl animate-in slide-in-from-top duration-200">
-            <nav className="flex flex-col space-y-3 font-button-text text-button-text uppercase tracking-wider">
+          <div className="xl:hidden bg-surface-charcoal/95 backdrop-blur-lg border-b border-border-subtle px-4 sm:px-margin-mobile py-6 shadow-2xl animate-in slide-in-from-top duration-200">
+            <nav className="flex flex-col space-y-2.5 font-button-text text-button-text uppercase tracking-wider">
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, 'home')}
@@ -209,7 +210,7 @@ export default function Header({ onOpenStartProject, onOpenConsultation }) {
       {/* User Quick Info Dropdown */}
       {showProfileModal && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-end pt-24 pr-4 sm:pr-12 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-end pt-20 sm:pt-24 pr-4 sm:pr-12 bg-black/60 backdrop-blur-sm"
           onClick={() => setShowProfileModal(false)}
         >
           <div

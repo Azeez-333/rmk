@@ -28,7 +28,7 @@ export default function ContactCta({ onOpenStartProject, onShowToast }) {
     >
       <div id="brief" className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
         {/* Left: Insane Idea Callout */}
-        <div className="lg:col-span-7 bg-primary-container p-space-xl text-pure-white flex flex-col justify-between shadow-2xl relative overflow-hidden rounded-3xl">
+        <div className="lg:col-span-7 bg-primary-container p-5 sm:p-8 lg:p-space-xl text-pure-white flex flex-col justify-between shadow-2xl relative overflow-hidden rounded-3xl">
           <div className="relative z-10">
             <div className="inline-block px-3 py-1 rounded-full bg-pure-white/15 text-pure-white font-label-uppercase text-xs tracking-widest uppercase mb-space-sm">
               GOT SOMETHING WILD?
@@ -72,7 +72,7 @@ export default function ContactCta({ onOpenStartProject, onShowToast }) {
         {/* Right: RMK CLUB Newsletter Block */}
         <div
           id="quote"
-          className="lg:col-span-5 bg-surface-charcoal border border-border-subtle p-space-xl flex flex-col justify-between rounded-3xl"
+          className="lg:col-span-5 bg-surface-charcoal border border-border-subtle p-5 sm:p-8 lg:p-space-xl flex flex-col justify-between rounded-3xl"
         >
           <div>
             <div className="flex items-center gap-space-xs mb-space-md">

@@ -3,19 +3,19 @@ import { METRICS } from '../constants/data';
 
 export default function Metrics() {
   return (
-    <section className="w-full bg-surface-black py-space-2xl px-margin-mobile lg:px-margin border-b border-border-subtle">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+    <section className="w-full bg-surface-black py-8 sm:py-space-2xl px-4 sm:px-margin-mobile lg:px-margin border-b border-border-subtle">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-gutter">
         {METRICS.map((metric, idx) => (
           <div
             key={idx}
-            className="p-5 sm:p-space-lg rounded-2xl bg-surface-charcoal border border-border-subtle hover:border-primary-container transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 shadow-md hover:shadow-primary-container/5"
+            className="p-3.5 sm:p-space-lg rounded-2xl bg-surface-charcoal border border-border-subtle hover:border-primary-container transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 shadow-md hover:shadow-primary-container/5"
           >
             <div className="flex items-baseline justify-between mb-space-sm gap-1">
-              <span className="font-metric-num text-3xl sm:text-4xl lg:text-metric-num text-pure-white flex items-baseline tracking-tight">
+              <span className="font-metric-num text-2xl sm:text-4xl lg:text-metric-num text-pure-white flex items-baseline tracking-tight">
                 {metric.value}
                 <span
                   className={`${metric.color} ${
-                    metric.isTextSuffix ? 'text-lg sm:text-headline-md font-bold' : ''
+                    metric.isTextSuffix ? 'text-base sm:text-headline-md font-bold' : ''
                   }`}
                 >
                   {metric.suffix}
